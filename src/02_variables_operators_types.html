@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Lesson 2: Variables, operators, and types</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.234001159668px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { min-height: 0px; color: rgb(0, 95, 206); margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S5 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S6 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S8 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S10 { font-family: monospace; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S11 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 15px; margin-right: 10px;  }
+.S12 { min-height: 0px; font-family: monospace; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S13 { margin-left: 3px; margin-top: 10px; margin-bottom: 4px; margin-right: 3px;  }
+.S14 { line-height: 15.5926675796509px; min-height: 18px; white-space: nowrap; font-size: 12.6666669845581px; white-space: nowrap; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S15 { line-height: 15.5926685333252px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
+.S16 { color: rgb(64, 64, 64); margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S17 { margin-left: 3px; margin-top: 4px; margin-bottom: 4px; margin-right: 3px;  }
+.S18 { line-height: 15.5926685333252px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S19 { line-height: 15.5926685333252px; min-height: 0px; white-space: pre; color: rgb(160, 32, 240); font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S20 { margin-left: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: 3px;  }
+.S21 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+.S22 { min-height: 0px; font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+.outputGroup {margin: 2px 0 2px 0; padding: 2px 2px 2px 4px;}
+.outputRegion {}
+.outputParagraph {color: rgba(64, 64, 64, 1); padding: 10px 0 6px 17px; background: white; overflow-x: hidden;}
+.inlineWrapper:last-child .outputParagraph {border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;}
+.outputParagraph:empty {margin: 0;}
+.inlineElement .symbolicElement {}
+.embeddedOutputsSymbolicElement .MathEquation {margin-top: 5px; margin-bottom: 5px;}
+.embeddedOutputsSymbolicElement .MathEquation.displaySymbolicElement {margin-left: 15px;}
+.embeddedOutputsSymbolicElement .MathEquation.inlineSymbolicElement {margin-left: 5px;}
+.embeddedOutputsSymbolicElement {overflow-x: auto; overflow-y: hidden;}
+.embeddedOutputsSymbolicElement { overflow: initial !important;}
+.embeddedOutputsTextElement,.embeddedOutputsVariableStringElement {font-family: Consolas, Inconsolata, Menlo, monospace; font-size: 12px; white-space: pre; word-wrap: initial; min-height: 18px; max-height: 250px; overflow: auto;}
+.textElement {padding-top: 3px;}
+.embeddedOutputsTextElement.inlineElement {}
+.inlineElement .textElement {}
+.embeddedOutputsTextElement,.embeddedOutputsVariableStringElement { max-height: none !important; overflow: initial !important;}
+.veSpecifier {}
+.veContainer {}
+.veSpecifierBox {height: 400px; width: 500px;}
+.veSpecifier .veTable {padding-top: 3px; padding-bottom: 4px;}
+.veSpecifierBox .veSpecifier .veContainer {position: relative; width: 100%; height: 370px;}
+.veSpecifierBox .dijitDialogPaneContent {width: 97% !important; height: 88% !important;}
+.veSpecifier .veTable .rowHeadersWrapper {padding-bottom: 0;}
+.veSpecifier .veTable .scroller .variableEditorRenderers {padding-right: 3px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;}
+.veVariableValueSummary {display: inline-block;}
+.veSpecifier .veTable .topHeaderWrapper,.veSpecifier .veTable .bottomRowHeaderWrapper {visibility: hidden; z-index: 0;}
+.veMetaSummary {font-style: italic;}
+.veSpecifier .veTable .scroller {overflow: hidden;}
+.veSpecifier .veTable:hover .scroller {overflow: auto;}
+.veSpecifier .veVariableName,.veSpecifier .veDimensionFont {font-family: Consolas, Inconsolata, Menlo, monospace; font-size: 12px;}
+.veSpecifier .veVariableName {padding-top: 3px;}
+.veSpecifier .veDimensionFont {font-style: italic; color: #9A9A9A;}
+.veSpecifier .scroller::-webkit-scrollbar-track {background-color: white;}
+.veSpecifier .scroller::-webkit-scrollbar-corner {background-color: white;}
+.veSpecifier .veTable .topRowHeaderWrapper {border: none; background-color: #F8F9FA;}
+.veSpecifier .mw_type_ListBase.showCellBorders,.veSpecifier .veTable .topHeaderWrapper,.veSpecifier .veTable .bottomRowHeaderWrapper,.veSpecifier .veTable .verticalScrollSpacer,.veSpecifier .veTable .horizontalScrollSpacer {border: none;}
+.veSpecifier .veTable .dataScrollerNode {border: 1px solid #BFBFBF;}
+.veSpecifier .veTable .columnHeaderNode,.veSpecifier .veTable .rowHeaderNode,.veSpecifier .veTable .dataBody {font-family: Arial; font-size: 13px;}
+.veSpecifier .veTable .columnHeaderNode,.veSpecifier .veTable .rowHeaderNode {color: #7F7F7F;}
+.veSpecifier .veTable .dataBody {color: #000000;}
+.veSpecifier .veTable .columnHeaderNode .cell .drag,.veSpecifier .veTable .columnHeaderNode .cell .header,.veSpecifier .veTable .topHeaderWrapper,.veSpecifier .veTable .bottomRowHeaderWrapper {background-color: #F8F9FA;}
+.veSpecifier .veTable .columnHeaderNode .cell .dragBorder {border-right: 1px solid #F8F9FA;}
+.veSpecifier .veTable .rowHeaderNode .cell {padding-top: 3px; text-align: center; border-bottom: 1px solid #F8F9FA;}
+.veSpecifier .veTable .dataBody .cell .plainText {text-align: right;}
+.veSpecifier .veTable .dataBody .row .cell {border-bottom: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.embeddedOutputsVariableElement {font-family: Consolas, Inconsolata, Menlo, monospace; font-size: 12px; white-space: pre-wrap; word-wrap: break-word; min-height: 18px; max-height: 250px; overflow: auto;}
+.variableElement {}
+.embeddedOutputsVariableElement.inlineElement {}
+.inlineElement .variableElement {}
+.variableValue { width: 100% !important; }
+.embeddedOutputsMatrixElement {min-height: 18px; box-sizing: border-box; font-family: Consolas, Inconsolata, Menlo, monospace; font-size: 12px;}
+.matrixElement .variableValue {white-space: pre; display: inline-block; vertical-align: top; overflow: hidden;}
+.embeddedOutputsMatrixElement.inlineElement {}
+.embeddedOutputsMatrixElement.inlineElement .topHeaderWrapper {display: none;}
+.embeddedOutputsMatrixElement.inlineElement .veTable .body {padding-top: 0 !important; max-height: 100px;}
+.embeddedOutputsMatrixElement.inlineElement .veVariableName {padding-top: 0;}
+.inlineElement .matrixElement {max-height: 300px;}
+.embeddedOutputsMatrixElement .matrixElement .valueContainer {white-space: nowrap; padding-top: 10px; margin-bottom: 3px;}
+.embeddedOutputsMatrixElement .matrixElement .valueContainer .horizontalEllipsis.hide,.embeddedOutputsMatrixElement .matrixElement .verticalEllipsis.hide {display: none;}
+.embeddedOutputsMatrixElement .matrixElement .valueContainer .horizontalEllipsis {margin-bottom: -3px;}
+.matrixElement { max-height: none !important; }
+.dijitTooltipDialog .dijitTooltipContainer .dijitTooltipContents .alertPlugin-alertMessage {min-width: 12px; max-width: 400px; max-height: 300px; overflow: auto;}
+.dijitTooltipDialog .alertPlugin-alertMessage::-webkit-scrollbar {width: 11px; height: 11px;}
+.dijitTooltipDialog .alertPlugin-alertMessage::-webkit-scrollbar-track {background-color: rgba(0, 0, 0, 0);}
+.dijitTooltipDialog .alertPlugin-alertMessage::-webkit-scrollbar-corner {background-color: rgba(0, 0, 0, 0);}
+.dijitTooltipDialog .alertPlugin-alertMessage::-webkit-scrollbar-thumb {border-radius: 7px; background-color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(0, 0, 0, 0); background-clip: padding-box;}
+.dijitTooltipDialog .alertPlugin-alertMessage::-webkit-scrollbar-thumb:hover {background-color: rgba(0, 0, 0, 0.2);}
+.dijitTooltipDialog .alertPlugin-alertMessage::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0);}
+.dijitTooltipDialog .alertPlugin-alertMessage:hover::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.1);}
+.dijitTooltipDialog .alertPlugin-alertMessage:hover::-webkit-scrollbar-thumb:hover {background-color: rgba(0, 0, 0, 0.2);}
+.alertPlugin-alertLine {position: absolute; display: initial; width: 40px; text-align: right; cursor: text;}
+.alertPlugin-onTextLine {visibility: hidden;}
+.alertPlugin-hasTooltip .alertPlugin-warningImg,.alertPlugin-hasTooltip .alertPlugin-errorImg {cursor: pointer;}
+.alertPlugin-isStale {-webkit-filter: opacity(0.4) grayscale(80%); filter: opacity(0.4) grayscale(80%);}
+.alertPlugin-alertLine .alertPlugin-errorElement {display: inline-block; margin-right: 4px;}
+.alertPlugin-errorImg {position: relative; display: inline-block; background-color: rgb(204, 55, 41); width: 14px; height: 14px; -webkit-border-radius: 7px;}
+.alertPlugin-alertLine .alertPlugin-warningElement {display: inline-block; margin-right: 3px;}
+.alertPlugin-warningImg {position: relative; display: inline-block; width: 16px; height: 15px; overflow: hidden;}
+.diagnosticMessage-wrapper {font-family: Consolas, Inconsolata, Menlo, monospace; font-size: 12px;}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType {color: rgb(255,100,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType a {color: rgb(255,100,0); text-decoration: underline;}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType {color: rgb(230,0,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType a {color: rgb(230,0,0); text-decoration: underline;}
+.diagnosticMessage-wrapper .diagnosticMessage-messagePart {white-space: pre-wrap;}
+.diagnosticMessage-wrapper .diagnosticMessage-stackPart {white-space: pre;}
+.embeddedOutputsWarningElement{min-height: 18px; max-height: 250px; overflow: auto;}
+.embeddedOutputsWarningElement.inlineElement {}
+.embeddedOutputsErrorElement {min-height: 18px; max-height: 250px; overflow: auto;}
+.embeddedOutputsErrorElement.inlineElement {}
+.alertPlugin-warningImg {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAYAAADUFP50AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH3wgUDS0rRPm/rwAAAAd0RVh0QXV0aG9yAKmuzEgAAAAMdEVYdERlc2NyaXB0aW9uABMJISMAAAAKdEVYdENvcHlyaWdodACsD8w6AAAADnRFWHRDcmVhdGlvbiB0aW1lADX3DwkAAAAJdEVYdFNvZnR3YXJlAF1w/zoAAAALdEVYdERpc2NsYWltZXIAt8C0jwAAAAh0RVh0V2FybmluZwDAG+aHAAAAB3RFWHRTb3VyY2UA9f+D6wAAAAh0RVh0Q29tbWVudAD2zJa/AAAABnRFWHRUaXRsZQCo7tInAAAA80lEQVQokY2SPQrCQBCF3yaChUXS2eoNbOwschSPojfQG8QT6BEExcbKEyiCgYiSWFhIIs9iXONm488Hw+7OzOPNsguSsOI0JVe+xGnKqh5FEgZ5SqzbwD2Vs+sD3S1Q89V7m4My0agQAbKPRlabOUKWyHgL8MUCkssSY2TTsez2xbUQ5ilxGNsizWEsPZZwP6h2e3fdD0uOeUrEk88iTRy+XEWo78ZvKhh3VcwS891+8XxXB8fQFP3jegzh4DwzC/p/9ChRxXkGB/mfI5aowQuA68auLJWd0zQ6z08eh8RlDtx2RfF+kdX1ily9BXgB0OyrB6CCtdLfhGTSAAAAAElFTkSuQmCC)}
+.alertPlugin-errorImg {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH3wgUDSwzTo4WuAAAAAd0RVh0QXV0aG9yAKmuzEgAAAAMdEVYdERlc2NyaXB0aW9uABMJISMAAAAKdEVYdENvcHlyaWdodACsD8w6AAAADnRFWHRDcmVhdGlvbiB0aW1lADX3DwkAAAAJdEVYdFNvZnR3YXJlAF1w/zoAAAALdEVYdERpc2NsYWltZXIAt8C0jwAAAAh0RVh0V2FybmluZwDAG+aHAAAAB3RFWHRTb3VyY2UA9f+D6wAAAAh0RVh0Q29tbWVudAD2zJa/AAAABnRFWHRUaXRsZQCo7tInAAABJ0lEQVQokZWSsWqDUBSG/3stQgpKxcU6OYl0FUI3hzrVxUfo3jeQOlXyBt37CC7pZAe3ECrdQpsuTkkXsWhoQJDbpTfExEDyjeecn/9wzk8YY+C0dcWKlxg/6St+5x8AgHPTwoVzA/XWhyDJhM8SLqyzKcujAM1ygT7ESx3GwwiSPSQbYZ1N2fz+rjNoT2YAgOz6qlM3n54h2UNC27pieRT0uvSRRwHaumK0GMcH1+ujWS5QjGPQMk2OFnHKNAFd/1/vFNZfn6AnqwCAMZwNTAur97e93u41txmYFqjiuCcbKo4Lqno+RE3fa9qT2eaX24iaDtXzQQVJJkY4OtrNCEcQJJl0I/cYoPk+EDlNhxHuRI7T1hUrxjHKNAF/08C0oDguVK8b8j+a03ZrT40rwQAAAABJRU5ErkJggg==)}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Lesson 2: Variables, operators, and types</span></h1><h2 class = "S3"><span class = "S2">These tutorials is based on Justin Bois' </span><a href = 'http://justinbois.github.io/bootcamp/'><span class = "S0">excellent programming bootcamp</span></a><span class = "S2">.</span></h2><p class = "S5"><span class = "S2">Whether you are programming in Matlab or pretty much any other language, you will be working with</span><span class = "S2"> </span><span class = "S6">variables</span><span class = "S2">. While the precise definition of a variable will vary from language to language, we'll focus on Matlab variables here. Like many of the concepts in this bootcamp, though, the knowledge you gain about Matlab variables will translate to other languages.</span></p><p class = "S5"><span class = "S2">The following can be properties of a variable:</span></p><ol class = "S7"><li class = "S8"><span class = "S0">The</span><span class = "S0"> </span><span class = "S9">type</span><span class = "S0"> </span><span class = "S0">of variable. E.g., is it an integer, like</span><span class = "S0"> </span><span class = "S10">2</span><span class = "S0">, or a string, like</span><span class = "S0"> </span><span class = "S10">'Hello, world.'</span><span class = "S0">?</span></li><li class = "S8"><span class = "S0">The</span><span class = "S0"> </span><span class = "S9">value</span><span class = "S0"> </span><span class = "S0">of the variable.</span></li></ol><p class = "S5"><span class = "S2">Depending on the type of the variable, you can do different things to it and other variables of similar type. This, as with most things, is best explored by example. We'll go through some of the properties of variables and things you can do to them in this tutorial.</span></p><h1 class = "S11"><span class = "S2">Determining the type</span></h1><p class = "S5"><span class = "S2">First, we will use Python's built-in</span><span class = "S2"> </span><span class = "S12">class()</span><span class = "S2"> </span><span class = "S2">function to determine the type of some variables.</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">class(2)</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableStringElement" data-width="989" style="width: 989px;"><div class="textElement"><div>ans = double</div></div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">class(2.3)</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableStringElement" data-width="989" style="width: 989px;"><div class="textElement"><div>ans = double</div></div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S18">class(</span><span class = "S19">'Hello, world.'</span><span class = "S15">)</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableStringElement" data-width="989" style="width: 989px;"><div class="textElement"><div>ans = char</div></div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><p class = "S5"><span class = "S2">The type function told us that </span><span class = "S12">2</span><span class = "S2"> is a double, so is </span><span class = "S12">2.3</span><span class = "S2"> (basically a double is a real number without an integer), and </span><span class = "S12">'Hello, world.'</span><span class = "S2"> is a char (short for character). Note that the single quotes around the characters indicate that it is a char. So, </span><span class = "S12">'1'</span><span class = "S2"> is a string, but </span><span class = "S12">1</span><span class = "S2"> is an integer.</span></p><h1 class = "S11"><span class = "S2">Operators</span></h1><p class = "S5"><span class = "S6">Operators</span><span class = "S2"> </span><span class = "S2">allow you to do things with variables, like add them. They are represented by special symbols, like</span><span class = "S2"> </span><span class = "S12">+</span><span class = "S2"> </span><span class = "S2">and</span><span class = "S2"> </span><span class = "S12">*</span><span class = "S2">. For now, we will focus on</span><span class = "S2"> </span><span class = "S6">arithmetic</span><span class = "S2"> </span><span class = "S2">operators. Matlab's arithmetic operators are </span><a href = 'http://www.mathworks.com/help/matlab/arithmetic-operators.html'><span class = "S0">listed here</span></a><span class = "S2">.</span></p><h2 class = "S3"><span class = "S2">Operators on doubles</span></h2><p class = "S5"><span class = "S2">Let's see how these operators work on integers.</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">2 + 3</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">ans = 5</div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">2 - 3</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">ans = -1</div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">2 * 3</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">ans = 6</div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">2 / 3</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">ans = 0.6667</div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">2^3</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">ans = 8</div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><p class = "S5"><span class = "S2">This is what we would expect.</span></p><p class = "S5"><span class = "S2">Note that dividing by zero returns </span><span style="vertical-align:-3px"><img src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAmCAYAAAA1MOAmAAAB10lEQVRYR+3Wz4uPURQG8M8olAUiOxaU8rNQFBuMf0A2FIWUhWywwEpsWGAxZpQyLLCg7MSCZKMkKUoWioUdOzZ+05nu6Hbd9/1qmibq/S7Pfd7z3Oc5z7l9+0zgr28CuXRk4+J2Z2NnY6sD/1xApuE7PrdceyojD8SnNmltyhbjPDakBndxAC+yhvNxDDtT7R124U6NtIlsNR433HItHmElnjZg9mOoPKuRTcZDBOE5XEFYuTspeI1+3MaS1PAELmIKjmIPVuBZTlgjW47n2Ibrxe224GZRO4SzWS16DmImduDn6FmNbDu2YjN+VGw6iSOpHg7ETL8VuGW4lqz+3aOJbFaysDaSwziVDsLqJxXQjDTPmOuHNmWRptk4U2kyF2+z5M3DlwpuIW5haa66pmw9LmERvhazuJzFPI7C7hsVsliHTdiYdnQEUiObjle4gOMJHLiDOJ0a38ekNK99uIqPiOXeiwGUwWn8WxApisjHkg4nBQsy+yKxsQ5vMlWxc6syTITkfa/oj57HjcvFDPJI38sECssfFDaGwsD8sfC9HuJ4jtYkeyIYEfUyELFP6zAnWXkvT+DfKmt4icZe7qVs7J0rX3Zk42JnZ2NnY6sDXUD+v4D8AlGZUCepbx7kAAAAAElFTkSuQmCC" width="13.5px" height="19px" /></span><span class = "S2">.</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">2 / 0</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">ans = Inf</div></div></div></div></div></div><p class = "S0"></p><div class = 'SectionBlock containment'><h1 class = "S1"><span class = "S2">Variables and assignment operators</span></h1><p class = "S5"><span class = "S2">So far, we have essentially just used Matlab as an oversized desktop calculator. We would really like to be able to think about our computational problems symbolically. We mentioned</span><span class = "S2"> </span><span class = "S6">variables</span><span class = "S2"> </span><span class = "S2">at the beginning of the tutorial, but in practice we were just using numbers and strings directly. We would like to say that a variable,</span><span class = "S2"> </span><span class = "S12">a</span><span class = "S2">, represents an integer and another variable</span><span class = "S2"> </span><span class = "S12">b</span><span class = "S2"> </span><span class = "S2">represents another integer. Then, we could do things like add</span><span class = "S2"> </span><span class = "S12">a</span><span class = "S2"> </span><span class = "S2">and</span><span class = "S2"> </span><span class = "S12">b</span><span class = "S2">. So, we see immediately that the variables have to have a type associated with them so the Matlab interpreter knows what to do when we use operators with them. A variable should also have a</span><span class = "S2"> </span><span class = "S6">value</span><span class = "S2"> </span><span class = "S2">associated with it, so the interpreter knows, e.g., what to add.</span></p><p class = "S5"><span class = "S2">In order to create, or</span><span class = "S2"> </span><span class = "S6">instantiate</span><span class = "S2">, a variable, we can use an</span><span class = "S2"> </span><span class = "S6">assignment operator</span><span class = "S2">. Intuitively, and in fact, this operator is the equals sign. So, let's make variables</span><span class = "S2"> </span><span class = "S12">a</span><span class = "S2"> </span><span class = "S2">and</span><span class = "S2"> </span><span class = "S12">b</span><span class = "S2"> </span><span class = "S2">and add them.</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S14 lineNode"><span class = "S15">a = 2;</span></p></div><div class = 'inlineWrapper'><p class = "S14 lineNode"><span class = "S15">b = 3;</span></p></div><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">a + b</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">ans = 5</div></div></div></div></div><p class = "S21"><span class = "S2">Great! We get what we expect! And we still have</span><span class = "S2"> </span><span class = "S12">a</span><span class = "S2"> </span><span class = "S2">and</span><span class = "S2"> </span><span class = "S12">b</span><span class = "S2">.</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">a</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">a = 2</div></div></div></div><div class = 'inlineWrapper outputs'><p class = "S14 lineNode"><span class = "S15">b</span></p><div class="outputParagraph"><div class="inlineElement embeddedOutputsVariableElement" style="width: 989px;"><div class="variableElement">b = 3</div></div></div></div></div><p class = "S21"><span class = "S2">Now, we might be tempted to say, "</span><span class = "S12">a</span><span class = "S2"> </span><span class = "S2">is two." No.</span><span class = "S2"> </span><span class = "S12">a</span><span class = "S2"> </span><span class = "S2">is not two.</span><span class = "S2"> </span><span class = "S12">a</span><span class = "S2"> </span><span class = "S2">is a variable that</span><span class = "S2"> </span><span class = "S22">has a value of 2</span><span class = "S2">. A variable in Matlab is not just its value. A variable also carries with it a type. It also has more associated with it under the hood of the interpreter that we will not get into. So, you can think about a variable as a map to an address in RAM (called a</span><span class = "S2"> </span><span class = "S6">pointer</span><span class = "S2"> </span><span class = "S2">in computer-speak) that stores information, including a type and a value. </span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Lesson 2: Variables, operators, and types
+%% These tutorials is based on Justin Bois' <http://justinbois.github.io/bootcamp/ excellent programming bootcamp>.
+% Whether you are programming in Matlab or pretty much any other language, you 
+% will be working with *variables*. While the precise definition of a variable 
+% will vary from language to language, we'll focus on Matlab variables here. Like 
+% many of the concepts in this bootcamp, though, the knowledge you gain about 
+% Matlab variables will translate to other languages.
+% 
+% The following can be properties of a variable:
+% 
+% # The *type* of variable. E.g., is it an integer, like |2|, or a string, like 
+% |'Hello, world.'|?
+% # The *value* of the variable.
+% 
+% Depending on the type of the variable, you can do different things to it 
+% and other variables of similar type. This, as with most things, is best explored 
+% by example. We'll go through some of the properties of variables and things 
+% you can do to them in this tutorial.
+%% Determining the type
+% First, we will use Python's built-in |class()| function to determine the type 
+% of some variables.
+
+class(2)
+%% 
+% 
+
+class(2.3)
+%% 
+% 
+
+class('Hello, world.')
+%% 
+% 
+% 
+% The type function told us that |2| is a double, so is |2.3| (basically 
+% a double is a real number without an integer), and |'Hello, world.'| is a char 
+% (short for character). Note that the single quotes around the characters indicate 
+% that it is a char. So, |'1'| is a string, but |1| is an integer.
+%% Operators
+% *Operators* allow you to do things with variables, like add them. They are 
+% represented by special symbols, like |+| and |*|. For now, we will focus on 
+% *arithmetic* operators. Matlab's arithmetic operators are <http://www.mathworks.com/help/matlab/arithmetic-operators.html 
+% listed here>.
+%% Operators on doubles
+% Let's see how these operators work on integers.
+
+2 + 3
+%% 
+% 
+
+2 - 3
+%% 
+% 
+
+2 * 3
+%% 
+% 
+
+2 / 3
+%% 
+% 
+
+2^3
+%% 
+% 
+% 
+% This is what we would expect.
+% 
+% Note that dividing by zero returns $\infty$.
+
+2 / 0
+%% 
+% 
+%% Variables and assignment operators
+% So far, we have essentially just used Matlab as an oversized desktop calculator. 
+% We would really like to be able to think about our computational problems symbolically. 
+% We mentioned *variables* at the beginning of the tutorial, but in practice we 
+% were just using numbers and strings directly. We would like to say that a variable, 
+% |a|, represents an integer and another variable |b| represents another integer. 
+% Then, we could do things like add |a| and |b|. So, we see immediately that the 
+% variables have to have a type associated with them so the Matlab interpreter 
+% knows what to do when we use operators with them. A variable should also have 
+% a *value* associated with it, so the interpreter knows, e.g., what to add.
+% 
+% In order to create, or *instantiate*, a variable, we can use an *assignment 
+% operator*. Intuitively, and in fact, this operator is the equals sign. So, let's 
+% make variables |a| and |b| and add them.
+
+a = 2;
+b = 3;
+a + b
+%% 
+% Great! We get what we expect! And we still have |a| and |b|.
+
+a
+b
+%% 
+% Now, we might be tempted to say, "|a| is two." No. |a| is not two. |a| 
+% is a variable that _has a value of 2_. A variable in Matlab is not just its 
+% value. A variable also carries with it a type. It also has more associated with 
+% it under the hood of the interpreter that we will not get into. So, you can 
+% think about a variable as a map to an address in RAM (called a *pointer* in 
+% computer-speak) that stores information, including a type and a value.
+##### SOURCE END #####
+--></body></html>
