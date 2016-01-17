@@ -86,11 +86,11 @@ hold off
 % define the number of fly viles, i.e. experiments.
 n_viles = 107;
 
-% initialize array to save fixation time
-n_gens = zeros(1, n_viles);
-
 % define population size
 pop_size = 16; % as in Burin's exp
+
+% initialize array to save fixation time
+n_gens = zeros(1, n_viles);
 
 for i=1:n_viles
     % initialize arrays to keep track of each fly's loci.
@@ -126,3 +126,68 @@ end
 hist(n_gens)
 xlabel('Number of generations to fixation')
 ylabel('Frequency')
+
+%%
+
+% define the number of fly viles, i.e. experiments.
+n_viles = 107;
+
+% define population size
+pop_size_array = [4 8 16]; % as in Burin's exp
+
+% initialize array to save fixation time
+n_gens = zeros(length(pop_size_array), n_viles);
+
+for p=1:length(pop_size_array)
+    pop_size = pop_size_array(p)
+        for i=1:n_viles
+        % initialize arrays to keep track of each fly's loci.
+        loci_1 = ones(1, pop_size);
+        loci_2 = ones(1, pop_size) * 2;
+        fix_bool = all((loci_1 == 1 & loci_2 == 1) |...
+                       (loci_1 == 2 & loci_2 == 2));
+        n_gen = 1;
+        while fix_bool == false;
+            for j=1:pop_size
+                % select parents without replacement
+                parents = datasample(1:pop_size, 2, 'Replace', false);
+                % extract the parents alleles
+                p_allele_1 = [loci_1(parents(1)) loci_2(parents(1))];
+                p_allele_2 = [loci_1(parents(2)) loci_2(parents(2))];
+
+                % randomly choose alleles from the parents
+                l_1 = datasample(p_allele_1, 1);
+                l_2 = datasample(p_allele_2, 1);
+
+                % save alleles to keep track of them
+                loci_1(j) = l_1;
+                loci_2(j) = l_2;
+            end
+            fix_bool = all((loci_1 == 1 & loci_2 == 1) |...
+                           (loci_1 == 2 & loci_2 == 2));
+            n_gen = n_gen + 1;
+        end
+        n_gens(p, i) = n_gen;
+    end
+end
+
+% plot the histogram for each
+
+subplot(1, 2, 1)
+hold on
+for i=1:(size(n_gens, 1))    
+    histogram(n_gens(i, :), 1:max_gen, 'facealpha', 0.3, ...
+              'edgecolor', 'none');
+end
+legend('4', '8', '16')
+xlabel('Number of generations to fixation')
+hold off
+
+subplot(1, 2, 2)
+hold on
+for i=1:(size(n_gens, 1))
+    cdfplot(n_gens(i, :))
+end
+legend('4', '8', '16')
+xlabel('Number of generations to fixation')
+hold off
