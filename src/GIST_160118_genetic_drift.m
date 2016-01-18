@@ -70,7 +70,7 @@ pop_size_array = [4 8 16 32 64 128];
 % initialize array to save # of gen to fix
 n_gen_fix = zeros(length(pop_size_array), n_vials);
 
-% loop through the number of populatio sizes
+% loop through the number of population sizes
 for p=1:length(pop_size_array)
     pop_size = pop_size_array(p)
     for i=1:n_vials
