@@ -20,24 +20,24 @@ w22 = 2;
 
 % STEP 1: loop through generations
 for i=2:n_gen
-    % STEP : extract genotypes of the previous generation
+    % STEP 2: extract genotypes of the previous generation
     p_gen = [locus_1(i-1, :); locus_2(i-1, :)];
-    % STEP : compute the current weights
+    % STEP 3: compute the current weights
     p = sum(sum(p_gen == 1)) / (2 * pop_size);
     q = sum(sum(p_gen == 2)) / (2 * pop_size);
     A11 = p^2 * w11;
     A12 = 2 * p * q * w12;
     A22 = q^2 * w22;
     Z = A11 + A12 + A22;
-    % STEP : assign a weight to each fly from the previous generation to
+    % STEP 4: assign a weight to each fly from the previous generation to
     % bias the parent selection.
     p_fitness = zeros(1, pop_size);
     p_fitness(sum(p_gen, 1) == 2) = A11 / Z;
     p_fitness(sum(p_gen, 1) == 3) = A12 / Z;
     p_fitness(sum(p_gen, 1) == 4) = A22 / Z;
-    % STEP 2: loop through each of the newborn flies
+    % STEP 5: loop through each of the newborn flies
     for j=1:pop_size
-        % STEP 3: select random parents
+        % STEP 6: select random parents
         parents = randsample(1:pop_size, 2, true, p_fitness);
         % INTERMEDIATE STEP:
         % pick out the parents genotype from our locus_1 and locus_2 matrices
@@ -45,10 +45,10 @@ for i=2:n_gen
             locus_2(i-1, parents(1))];
         p_allele_2 = [locus_1(i-1, parents(2)) ...
             locus_2(i-1, parents(2))];
-        % STEP 4: select randomly the allele for the baby fly
+        % STEP 7: select randomly the allele for the baby fly
         l_1 = randsample(p_allele_1, 1);
         l_2 = randsample(p_allele_2, 1);
-        % STEP 5: save these alleles to keep track of them
+        % STEP 8: save these alleles to keep track of them
         locus_1(i, j) = l_1;
         locus_2(i, j) = l_2;
     end
