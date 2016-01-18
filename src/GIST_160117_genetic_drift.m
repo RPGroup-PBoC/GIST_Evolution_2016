@@ -29,9 +29,7 @@ for i=2:(n_gen + 1)
         loci_1(i, j) = l_1;
         loci_2(i, j) = l_2;
     end
-
 end
-sum(sum(pop_mat == 2))
 %%
 
 % we'll use imagesc to make a visual map of how the population changes over
@@ -76,7 +74,6 @@ ylim([0 1])
 xlim([1 n_gen])
 legend('Allele 1','Allele 2')
 hold off
-
 %%
 
 % Computing the fixation time
@@ -126,14 +123,13 @@ end
 hist(n_gens)
 xlabel('Number of generations to fixation')
 ylabel('Frequency')
-
 %%
 
 % define the number of fly viles, i.e. experiments.
 n_viles = 107;
 
 % define population size
-pop_size_array = [4 8 16]; % as in Burin's exp
+pop_size_array = [4 8 16 32]; % as in Burin's exp
 
 % initialize array to save fixation time
 n_gens = zeros(length(pop_size_array), n_viles);
@@ -173,7 +169,8 @@ end
 
 % plot the histogram for each
 
-subplot(1, 2, 1)
+max_gen = max(n_gens(:));
+subplot(1, 3, 1)
 hold on
 for i=1:(size(n_gens, 1))    
     histogram(n_gens(i, :), 1:max_gen, 'facealpha', 0.3, ...
@@ -183,11 +180,16 @@ legend('4', '8', '16')
 xlabel('Number of generations to fixation')
 hold off
 
-subplot(1, 2, 2)
+subplot(1, 3, 2)
 hold on
 for i=1:(size(n_gens, 1))
     cdfplot(n_gens(i, :))
 end
-legend('4', '8', '16')
+legend('4', '8', '16', '32')
 xlabel('Number of generations to fixation')
 hold off
+
+subplot(1, 3, 3)
+plot(pop_size_array, mean(n_gens, 2), '-o')
+xlabel('Population size')
+ylabel('Mean time for fixation')
