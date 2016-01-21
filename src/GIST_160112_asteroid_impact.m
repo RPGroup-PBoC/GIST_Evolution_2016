@@ -15,5 +15,5 @@ end
 
 % Plot on a log-log scale
 loglog(r, energy)
-xlabel('radius [m]')
-ylabel('energy [J]')
+xlabel('radius [m]', 'FontSize', 20)
+ylabel('energy [J]', 'FontSize', 20)

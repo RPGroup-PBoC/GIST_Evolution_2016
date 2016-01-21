@@ -1,8 +1,8 @@
 % define population size
-pop_size = 32;
+pop_size = 16;
 
 % define number of generations
-n_gen = 100;
+n_gen = 20;
 
 % initialize transition matrix
 P = zeros(2 * pop_size + 1, 2 * pop_size + 1);

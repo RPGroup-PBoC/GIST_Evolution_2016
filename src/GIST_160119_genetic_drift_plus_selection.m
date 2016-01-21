@@ -1,40 +1,40 @@
-% Define population size
-pop_size = 1000; % as in Burin's experiment
+% define population size
+pop_size = 1000;
 
-% Define the number of generations to run the simulation
-n_gen = 20; % also as in Burin's experiment
+% define the number of generations to run the simulation
+n_gen = 20;
 
-% initialize matrices to keep track of each fly's locus
+% initialize matrices to keep track of each fly's alleles
 locus_1 = zeros(n_gen, pop_size);
 locus_2 = zeros(n_gen, pop_size);
 
-% add alleles of generation 1.
+% add alleles for 1st generation
 locus_1(1, :) = ones(1, pop_size);
-% for allele 2 we also use the function ones and simply multiply by 2.
 locus_2(1, :) = ones(1, pop_size) * 2;
 
-% define relative fitnesses
+% define weights
 w11 = 1;
 w12 = 2;
-w22 = 2;
+w22 = 0.5;
 
-% STEP 1: loop through generations
+% STEP 1: loop through the generations
 for i=2:n_gen
-    % STEP 2: extract genotypes of the previous generation
-    p_gen = [locus_1(i-1, :); locus_2(i-1, :)];
+    % STEP 2: extract the genotypes of the previous generation
+    p_gen = [locus_1(i - 1, :); locus_2(i - 1, :)];
     % STEP 3: compute the current weights
     p = sum(sum(p_gen == 1)) / (2 * pop_size);
-    q = sum(sum(p_gen == 2)) / (2 * pop_size);
+    q = 1 - p;
     A11 = p^2 * w11;
     A12 = 2 * p * q * w12;
     A22 = q^2 * w22;
-    Z = A11 + A12 + A22;
-    % STEP 4: assign a weight to each fly from the previous generation to
-    % bias the parent selection.
+    w_bar = A11 + A12 + A22;
+    % STEP 4: assign a weight to each fly from the previous generation
     p_fitness = zeros(1, pop_size);
-    p_fitness(sum(p_gen, 1) == 2) = A11 / Z;
-    p_fitness(sum(p_gen, 1) == 3) = A12 / Z;
-    p_fitness(sum(p_gen, 1) == 4) = A22 / Z;
+    p_gen_sum = sum(p_gen, 1);
+    p_fitness(p_gen_sum == 2) = A11 / w_bar;
+    p_fitness(p_gen_sum == 3) = A12 / w_bar;
+    p_fitness(p_gen_sum == 4) = A22 / w_bar;
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % STEP 5: loop through each of the newborn flies
     for j=1:pop_size
         % STEP 6: select random parents
@@ -53,7 +53,6 @@ for i=2:n_gen
         locus_2(i, j) = l_2;
     end
 end
-
 %%
 pop_mat = sort((locus_1 + locus_2), 2);
 subplot(2, 2, 1)
@@ -88,8 +87,9 @@ hold off
 
 % plot ?p
 subplot(2, 2, 4)
-delta_p = diff((sum(locus_1 == 1, 2) + sum(locus_2 == 1, 2)) /...
-    (2 * pop_size));
+p = (sum(locus_1 == 1, 2) + sum(locus_2 == 1, 2)) /...
+    (2 * pop_size);
+delta_p = diff(p);
 plot(delta_p, 'b')
 xlabel('Number of generation')
 ylabel('$\Delta p$', 'Interpreter', 'Latex')

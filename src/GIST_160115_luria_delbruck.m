@@ -9,7 +9,7 @@ No = 1000;
 % number of generations
 n_gen = 7;
 
-initialize array of cells
+% initialize array of cells
 n_mother = zeros(1, No);
 for i=1:n_gen
     % generate random array
@@ -76,3 +76,5 @@ for j=1:n_sim
 end
 
 hist(n_mut, 100)
+xlabel('Number of resistant colonies', 'FontSize', 20)
+ylabel('Frequency', 'FontSize', 20)

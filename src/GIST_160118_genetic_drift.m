@@ -2,7 +2,7 @@
 pop_size = 16; % as in Burin's exp
 
 % define number of generations
-n_gen = 20;
+n_gen = 30;
 
 % initialize matrices to keep track of each fly's locus
 locus_1 = zeros(n_gen, pop_size);
@@ -46,6 +46,10 @@ hold on
 plot(sum(pop_mat == 3, 2) / pop_size, 'g')
 plot(sum(pop_mat == 4, 2) / pop_size, 'r')
 legend('f_{11}', 'f_{12}', 'f_{22}')
+xlabel('Number of generation')
+ylabel('Frequency')
+xlim([1 n_gen])
+ylim([0 1])
 hold off
 
 % plot allele frequencies
@@ -56,6 +60,11 @@ hold on
 plot((sum(locus_1 == 2, 2) + sum(locus_2 == 2, 2)) /...
     (2 * pop_size), 'r')
 legend('f_1', 'f_2')
+xlabel('Number of generation')
+ylabel('Frequency')
+xlim([1 n_gen])
+ylim([0 1])
+hold off
 
 %%
 
