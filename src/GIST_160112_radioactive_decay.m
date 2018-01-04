@@ -24,6 +24,6 @@ hold on % keep the plot and add a new curve
 plot(t, N_A, 'g')
 plot(t, N_K + N_A, 'b')
 % label the plot
-xlabel('time 10^-11 years^-1') % label the x axis
-ylabel('Number of atoms') % label the y axis
+xlabel('time 10^{-11} years^{-1}', 'FontSize', 20) % label the x axis
+ylabel('Number of atoms', 'FontSize', 20) % label the y axis
 legend('N_K', 'N_{Ar}', 'N_K + N_{Ar}')
