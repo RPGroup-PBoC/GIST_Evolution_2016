@@ -35,5 +35,6 @@
 
 #Notebook garbage. 
 *.ipynb_checkpoints
+*pycache*
 
 _publications
